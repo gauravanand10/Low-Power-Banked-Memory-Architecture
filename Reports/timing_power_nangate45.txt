@@ -1,0 +1,75 @@
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: u_bank0/_4368_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_bank0/_4318_ (falling clock gating-check end-point clocked by clk')
+Path Group: **clock_gating_default**
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_bank0/_4368_/CK (DFF_X1)
+   0.14    0.14 ^ u_bank0/_4368_/Q (DFF_X1)
+   0.00    0.14 ^ u_bank0/_4318_/B1 (AOI21_X1)
+           0.14   data arrival time
+
+  10.00   10.00   clock clk' (fall edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 v u_bank0/_4318_/A (AOI21_X1)
+   0.00   10.00   clock gating setup time
+          10.00   data required time
+---------------------------------------------------------
+          10.00   data required time
+          -0.14   data arrival time
+---------------------------------------------------------
+           9.86   slack (MET)
+
+
+Startpoint: u_bank0/_4371_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_bank0/_4375_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_bank0/_4371_/CK (DFF_X1)
+   0.10    0.10 ^ u_bank0/_4371_/Q (DFF_X1)
+   0.03    0.13 v u_bank0/_4291_/ZN (NAND3_X1)
+   0.03    0.16 ^ u_bank0/_4302_/ZN (NOR2_X1)
+   0.06    0.22 v u_bank0/_4304_/Z (MUX2_X1)
+   0.06    0.28 v u_bank0/_4305_/Z (MUX2_X1)
+   0.00    0.28 v u_bank0/_4375_/D (DFF_X1)
+           0.28   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ u_bank0/_4375_/CK (DFF_X1)
+  -0.04    9.96   library setup time
+           9.96   data required time
+---------------------------------------------------------
+           9.96   data required time
+          -0.28   data arrival time
+---------------------------------------------------------
+           9.68   slack (MET)
+
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power
+----------------------------------------------------------------
+Sequential             1.37e-02   4.59e-05   1.67e-04   1.39e-02  92.6%
+Combinational          4.76e-04   5.05e-04   1.33e-04   1.11e-03   7.4%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.42e-02   5.51e-04   3.00e-04   1.50e-02 100.0%
+                          94.3%       3.7%       2.0%
+Saving command history
