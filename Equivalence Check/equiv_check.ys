@@ -1,0 +1,18 @@
+# equiv_check.ys
+# Read reference (RTL)
+read_verilog memory_bank.v decoder.v mux.v banked_memory.v
+synth -top banked_memory -flatten
+rename top top_rtl
+
+# Read implementation (gate-level)
+read_verilog synth_banked_memory.v
+synth -top banked_memory -flatten
+rename top top_gate
+
+# Equivalence check
+equiv_make top_rtl top_gate equiv
+equiv_simple
+equiv_status -assert
+
+# Show differences if any
+equiv_log -d
