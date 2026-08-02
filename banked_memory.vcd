@@ -1,0 +1,397 @@
+$date
+	Sat Feb 21 03:59:06 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_banked_memory $end
+$var wire 8 ! rdata [7:0] $end
+$var reg 6 " addr [5:0] $end
+$var reg 2 # bank_select [1:0] $end
+$var reg 1 $ clk $end
+$var reg 8 % wdata [7:0] $end
+$var reg 1 & we $end
+$scope module uut $end
+$var wire 6 ' addr [5:0] $end
+$var wire 2 ( bank_select [1:0] $end
+$var wire 1 $ clk $end
+$var wire 8 ) wdata [7:0] $end
+$var wire 1 & we $end
+$var wire 8 * rdata [7:0] $end
+$var wire 4 + cs [3:0] $end
+$var wire 8 , bank3_rdata [7:0] $end
+$var wire 8 - bank2_rdata [7:0] $end
+$var wire 8 . bank1_rdata [7:0] $end
+$var wire 8 / bank0_rdata [7:0] $end
+$scope module u_bank0 $end
+$var wire 6 0 addr [5:0] $end
+$var wire 1 1 bank_clk $end
+$var wire 1 $ clk $end
+$var wire 1 2 cs $end
+$var wire 8 3 wdata [7:0] $end
+$var wire 1 & we $end
+$var reg 5 4 idle_count [4:0] $end
+$var reg 2 5 next_state [1:0] $end
+$var reg 8 6 rdata [7:0] $end
+$var reg 2 7 state [1:0] $end
+$upscope $end
+$scope module u_bank1 $end
+$var wire 6 8 addr [5:0] $end
+$var wire 1 9 bank_clk $end
+$var wire 1 $ clk $end
+$var wire 1 : cs $end
+$var wire 8 ; wdata [7:0] $end
+$var wire 1 & we $end
+$var reg 5 < idle_count [4:0] $end
+$var reg 2 = next_state [1:0] $end
+$var reg 8 > rdata [7:0] $end
+$var reg 2 ? state [1:0] $end
+$upscope $end
+$scope module u_bank2 $end
+$var wire 6 @ addr [5:0] $end
+$var wire 1 A bank_clk $end
+$var wire 1 $ clk $end
+$var wire 1 B cs $end
+$var wire 8 C wdata [7:0] $end
+$var wire 1 & we $end
+$var reg 5 D idle_count [4:0] $end
+$var reg 2 E next_state [1:0] $end
+$var reg 8 F rdata [7:0] $end
+$var reg 2 G state [1:0] $end
+$upscope $end
+$scope module u_bank3 $end
+$var wire 6 H addr [5:0] $end
+$var wire 1 I bank_clk $end
+$var wire 1 $ clk $end
+$var wire 1 J cs $end
+$var wire 8 K wdata [7:0] $end
+$var wire 1 & we $end
+$var reg 5 L idle_count [4:0] $end
+$var reg 2 M next_state [1:0] $end
+$var reg 8 N rdata [7:0] $end
+$var reg 2 O state [1:0] $end
+$upscope $end
+$scope module u_decoder $end
+$var wire 2 P bank_select [1:0] $end
+$var reg 4 Q chip_select [3:0] $end
+$upscope $end
+$scope module u_mux $end
+$var wire 8 R bank0_rdata [7:0] $end
+$var wire 8 S bank1_rdata [7:0] $end
+$var wire 8 T bank2_rdata [7:0] $end
+$var wire 8 U bank3_rdata [7:0] $end
+$var wire 2 V bank_select [1:0] $end
+$var reg 8 W final_rdata [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx W
+b0 V
+bx U
+bx T
+bx S
+bx R
+b1 Q
+b0 P
+bx O
+bx N
+bx M
+bx L
+b0 K
+0J
+0I
+b0 H
+bx G
+bx F
+bx E
+bx D
+b0 C
+0B
+0A
+b0 @
+bx ?
+bx >
+bx =
+bx <
+b0 ;
+0:
+09
+b0 8
+bx 7
+bx 6
+bx 5
+bx 4
+b0 3
+12
+01
+b0 0
+bx /
+bx .
+bx -
+bx ,
+b1 +
+bx *
+b0 )
+b0 (
+b0 '
+0&
+b0 %
+0$
+b0 #
+b0 "
+bx !
+$end
+#5
+x1
+x9
+xA
+xI
+1$
+#10
+01
+09
+0A
+0I
+0$
+b10101010 %
+b10101010 )
+b10101010 3
+b10101010 ;
+b10101010 C
+b10101010 K
+b1010 "
+b1010 '
+b1010 0
+b1010 8
+b1010 @
+b1010 H
+1&
+#15
+x1
+x9
+xA
+xI
+1$
+#20
+01
+09
+0A
+0I
+0$
+0&
+#25
+b10101010 !
+b10101010 *
+b10101010 W
+b10101010 /
+b10101010 6
+b10101010 R
+x1
+x9
+xA
+xI
+1$
+#30
+01
+09
+0A
+0I
+0$
+#35
+x1
+x9
+xA
+xI
+1$
+#40
+01
+09
+0A
+0I
+0$
+#45
+x1
+x9
+xA
+xI
+1$
+#50
+1B
+02
+01
+09
+0A
+0I
+b100 +
+b100 Q
+bx !
+bx *
+bx W
+0$
+b1010101 %
+b1010101 )
+b1010101 3
+b1010101 ;
+b1010101 C
+b1010101 K
+b10100 "
+b10100 '
+b10100 0
+b10100 8
+b10100 @
+b10100 H
+1&
+b10 #
+b10 (
+b10 P
+b10 V
+#55
+x1
+x9
+xA
+xI
+1$
+#60
+01
+09
+0A
+0I
+0$
+0&
+#65
+b1010101 !
+b1010101 *
+b1010101 W
+b1010101 -
+b1010101 F
+b1010101 T
+x1
+x9
+xA
+xI
+1$
+#70
+01
+09
+0A
+0I
+0$
+#75
+x1
+x9
+xA
+xI
+1$
+#80
+01
+09
+0A
+0I
+0$
+#85
+x1
+x9
+xA
+xI
+1$
+#90
+0B
+12
+01
+09
+0A
+0I
+b1 +
+b1 Q
+b10101010 !
+b10101010 *
+b10101010 W
+0$
+b1010 "
+b1010 '
+b1010 0
+b1010 8
+b1010 @
+b1010 H
+b0 #
+b0 (
+b0 P
+b0 V
+#95
+x1
+x9
+xA
+xI
+1$
+#100
+01
+09
+0A
+0I
+0$
+#105
+x1
+x9
+xA
+xI
+1$
+#110
+01
+09
+0A
+0I
+0$
+#115
+x1
+x9
+xA
+xI
+1$
+#120
+01
+09
+0A
+0I
+0$
+#125
+x1
+x9
+xA
+xI
+1$
+#130
+01
+09
+0A
+0I
+0$
+#135
+x1
+x9
+xA
+xI
+1$
+#140
+01
+09
+0A
+0I
+0$
+#145
+x1
+x9
+xA
+xI
+1$
+#150
+01
+09
+0A
+0I
+0$
