@@ -1,0 +1,19 @@
+# synth_nangate45.ys
+# Simple synthesis for Nangate45
+
+read_liberty -lib ~/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+read_verilog memory_bank.v
+read_verilog decoder.v
+read_verilog mux.v
+read_verilog banked_memory.v
+
+synth -top banked_memory
+
+dfflibmap -liberty ~/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+abc -liberty ~/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+stat
+
+write_verilog synth_output.v
+show -format png -prefix banked_memory_nangate45

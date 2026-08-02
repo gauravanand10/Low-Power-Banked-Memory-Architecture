@@ -1,0 +1,11 @@
+
+read_liberty -lib /home/araj_7/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_verilog memory_bank.v
+read_verilog decoder.v
+read_verilog mux.v
+read_verilog banked_memory.v
+synth -top banked_memory
+dfflibmap -liberty /home/araj_7/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/araj_7/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+write_verilog synth_banked_memory.v
+stat
